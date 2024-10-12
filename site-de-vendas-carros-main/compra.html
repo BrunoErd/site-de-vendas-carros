@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Fino's Motorsports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .mt-5 {
+            margin-top: 5rem;
+        }
+        #success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1050; 
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fino's Motorsports</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="support.html">Suporte</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-5">
+    <h2>Finalizar Compra</h2>
+    <form id="payment-form">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome Completo</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="phonePersonal" class="form-label">Telefone Pessoal</label>
+            <input type="tel" class="form-control" id="phonePersonal" required>
+        </div>
+        <div class="mb-3">
+            <label for="phoneFixed" class="form-label">Telefone Fixo</label>
+            <input type="tel" class="form-control" id="phoneFixed" required>
+        </div>
+        
+      
+        <div class="mb-3">
+            <label for="address" class="form-label">Endereço Completo</label>
+            <input type="text" class="form-control" id="address" required>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="city" required>
+        </div>
+        <div class="mb-3">
+            <label for="state" class="form-label">Estado</label>
+            <input type="text" class="form-control" id="state" required>
+        </div>
+        <div class="mb-3">
+            <label for="postalCode" class="form-label">Código Postal</label>
+            <input type="text" class="form-control" id="postalCode" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="cardNumber" class="form-label">Número do Cartão</label>
+            <input type="text" class="form-control" id="cardNumber" required>
+        </div>
+        <div class="mb-3">
+            <label for="expiryDate" class="form-label">Data de Validade (MM/AA)</label>
+            <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
+        </div>
+        <div class="mb-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input type="text" class="form-control" id="cvv" required>
+        </div>
+        
+       
+        <div class="mb-3">
+            <small class="form-text text-muted">Tempo estimado de entrega do veículo de 1 até 3 semanas.</small>
+        </div>
+
+        <button type="submit" class="btn btn-success">Finalizar Compra</button>
+    </form>
+    
+    <div id="success-message" class="alert alert-success mt-3">
+        A Fino's MotorSports Agradece sua compra!
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        
+        const successMessage = document.getElementById('success-message');
+        successMessage.style.display = 'block';
+        
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 5000);
+
+        this.reset();
+    });
+</script>
+</body>
+</html>
